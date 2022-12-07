@@ -192,16 +192,12 @@ extension ToeflTimerController{
             self.timerAnnouncementLabel.text = "Please prepare your answer after the Beep"
             self.timerLabel.text = "00:00"
             
-            print("1 -- \(prepareDelaySecondsLeft)")
-            
         }else if prepareDelaySecondsLeft == 0{
             
             prepareDelaySecondsLeft -= 1
             
             self.timerAnnouncementLabel.text = "Beep"
             self.timerLabel.text = String(format: "00:%02d", prepareSecondsLeft)
-            
-            print("2 -- \(prepareDelaySecondsLeft)")
             
         }else if prepareSecondsLeft > 0 {
             
@@ -212,8 +208,6 @@ extension ToeflTimerController{
             
             self.timerSlider.setProgress(Tasks.shared.getPrepareProgress(task: 0, prepareOrSpeak: 0, timeleft: prepareSecondsLeft), animated: true)
             
-            print("3 -- \(prepareSecondsLeft)")
-            
         }else if speakingDelaySecondsLeft > 0{
             
             speakingDelaySecondsLeft -= 1
@@ -223,16 +217,12 @@ extension ToeflTimerController{
             
             self.timerSlider.setProgress(0, animated: false)
             
-            print("4 -- \(speakingDelaySecondsLeft)")
-            
         }else if speakingDelaySecondsLeft == 0{
             
             speakingDelaySecondsLeft -= 1
             
             self.timerAnnouncementLabel.text = "Beep"
             self.timerLabel.text = String(format: "00:%02d", speakingSecondsLeft)
-            print("5 -- \(speakingDelaySecondsLeft)")
-            
             
         }else if speakingSecondsLeft > 0{
             
@@ -243,16 +233,12 @@ extension ToeflTimerController{
             
             self.timerSlider.setProgress(Tasks.shared.getPrepareProgress(task: 0, prepareOrSpeak: 1, timeleft: speakingSecondsLeft), animated: true)
             
-            print("6 -- \(speakingSecondsLeft)")
-            
         }else{
             self.setInitialUi()
         }
         
         
     }
-    
-    
     
     
 }
