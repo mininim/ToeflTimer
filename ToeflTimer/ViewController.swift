@@ -206,7 +206,7 @@ extension ToeflTimerController{
             self.timerAnnouncementLabel.text = "Prepare your response"
             self.timerLabel.text = String(format: "00:%02d", prepareSecondsLeft)
             
-            self.timerSlider.setProgress(Tasks.shared.getPrepareProgress(task: 0, prepareOrSpeak: 0, timeleft: prepareSecondsLeft), animated: true)
+            self.timerSlider.setProgress(Tasks.shared.getPrepareProgress(task: currentTask, prepareOrSpeak: 0, timeleft: prepareSecondsLeft), animated: true)
             
         }else if speakingDelaySecondsLeft > 0{
             
@@ -231,7 +231,7 @@ extension ToeflTimerController{
             self.timerAnnouncementLabel.text = "Recording"
             self.timerLabel.text = String(format: "00:%02d", speakingSecondsLeft)
             
-            self.timerSlider.setProgress(Tasks.shared.getPrepareProgress(task: 0, prepareOrSpeak: 1, timeleft: speakingSecondsLeft), animated: true)
+            self.timerSlider.setProgress(Tasks.shared.getPrepareProgress(task: currentTask, prepareOrSpeak: 1, timeleft: speakingSecondsLeft), animated: true)
             
         }else{
             self.setInitialUi()
