@@ -1,6 +1,14 @@
 # Created by https://www.toptal.com/developers/gitignore/api/xcode,swift,cocoapods
 # Edit at https://www.toptal.com/developers/gitignore?templates=xcode,swift,cocoapods
 
+##GooleService-info.plist##
+ToeflTimer/Resources/GoogleService-Info.plist
+
+### Firebase ###
+.idea
+**/node_modules/*
+**/.firebaserc
+
 ### CocoaPods ###
 ## CocoaPods GitIgnore Template
 
