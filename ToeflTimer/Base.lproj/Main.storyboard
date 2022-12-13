@@ -119,6 +119,12 @@
                                     </label>
                                 </subviews>
                             </stackView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8vb-KU-awc">
+                                <rect key="frame" x="30" y="141.5" width="354" height="20.5"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="HyO-Jk-KGK"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -126,10 +132,13 @@
                             <constraint firstItem="n4x-kJ-BIE" firstAttribute="centerX" secondItem="SQw-bD-9Tt" secondAttribute="centerX" id="3dL-gx-UIQ"/>
                             <constraint firstItem="HyO-Jk-KGK" firstAttribute="bottom" secondItem="n4x-kJ-BIE" secondAttribute="bottom" constant="200" id="6kR-7F-Z5w"/>
                             <constraint firstItem="BD7-a8-gEP" firstAttribute="centerX" secondItem="HyO-Jk-KGK" secondAttribute="centerX" id="CCN-eG-X21"/>
+                            <constraint firstItem="8vb-KU-awc" firstAttribute="leading" secondItem="3a8-bT-p4Q" secondAttribute="leading" id="DLl-KL-vUz"/>
                             <constraint firstItem="n5n-6b-2aX" firstAttribute="top" secondItem="HyO-Jk-KGK" secondAttribute="top" constant="20" id="G3c-ZE-oKB"/>
                             <constraint firstItem="3a8-bT-p4Q" firstAttribute="centerX" secondItem="HyO-Jk-KGK" secondAttribute="centerX" id="K8h-uN-fXU"/>
                             <constraint firstItem="n5n-6b-2aX" firstAttribute="leading" secondItem="BD7-a8-gEP" secondAttribute="leading" id="KdC-Ep-gue"/>
                             <constraint firstItem="BD7-a8-gEP" firstAttribute="leading" secondItem="HyO-Jk-KGK" secondAttribute="leading" constant="30" id="M6U-oh-eCe"/>
+                            <constraint firstItem="3a8-bT-p4Q" firstAttribute="top" secondItem="8vb-KU-awc" secondAttribute="bottom" constant="50.5" id="QGh-1T-K9E"/>
+                            <constraint firstItem="8vb-KU-awc" firstAttribute="width" secondItem="3a8-bT-p4Q" secondAttribute="width" id="Qqg-qs-mIH"/>
                             <constraint firstItem="BD7-a8-gEP" firstAttribute="centerY" secondItem="HyO-Jk-KGK" secondAttribute="centerY" id="aUe-L3-n1l"/>
                             <constraint firstItem="HyO-Jk-KGK" firstAttribute="trailing" secondItem="BD7-a8-gEP" secondAttribute="trailing" constant="30" id="ipb-nl-Zca"/>
                             <constraint firstItem="3a8-bT-p4Q" firstAttribute="leading" secondItem="HyO-Jk-KGK" secondAttribute="leading" constant="30" id="k3x-t1-Box"/>
@@ -138,6 +147,7 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="questionLabel" destination="8vb-KU-awc" id="D9C-9S-M67"/>
                         <outlet property="taskInfoLabel" destination="whM-M3-UY7" id="7ZK-pL-cdT"/>
                         <outlet property="taskLabel" destination="511-w0-VY5" id="AHp-Xx-lLa"/>
                         <outlet property="taskSegmentControl" destination="BD7-a8-gEP" id="J7l-Eu-bp3"/>
@@ -154,7 +164,7 @@
     </scenes>
     <color key="tintColor" systemColor="labelColor"/>
     <resources>
-        <image name="play.circle.fill" catalog="system" width="128" height="123"/>
+        <image name="play.circle.fill" catalog="system" width="32" height="32"/>
         <systemColor name="labelColor">
             <color red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>

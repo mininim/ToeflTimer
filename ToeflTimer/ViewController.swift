@@ -6,10 +6,14 @@
 //
 
 import UIKit
+import Firebase
 
 class ToeflTimerController: UIViewController {
 
     // MARK: - Properties
+    
+    let db = Database.database().reference()
+    
     var timer: Timer?
     
     var currentTask : Int = 0
@@ -25,6 +29,7 @@ class ToeflTimerController: UIViewController {
     @IBOutlet weak var taskLabel: UILabel!
     @IBOutlet weak var taskInfoLabel: UILabel!
     
+    @IBOutlet weak var questionLabel: UILabel!
     @IBOutlet weak var timerAnnouncementLabel: UILabel!
     @IBOutlet weak var timerLabel: UILabel!
     @IBOutlet weak var timerSlider: UIProgressView!
@@ -65,7 +70,7 @@ class ToeflTimerController: UIViewController {
         
         self.setPlayImage()
         
-        
+        self.updateQuestion()
                 
     }
     
@@ -240,5 +245,18 @@ extension ToeflTimerController{
         
     }
     
+    func updateQuestion(){
+        
+        db.child("firstData").observeSingleEvent(of: .value) { snapshot in
+            print("-->\(snapshot)")
+            
+            let value = snapshot.value as? String ?? ""
+            
+            DispatchQueue.main.async {
+                self.questionLabel.text = value
+            }
+            
+        }
+    }
     
 }
