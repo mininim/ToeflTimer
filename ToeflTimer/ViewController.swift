@@ -217,7 +217,7 @@ extension ToeflTimerController{
             
             speakingDelaySecondsLeft -= 1
             
-            self.timerAnnouncementLabel.text = "Please begin speacking after the Beep"
+            self.timerAnnouncementLabel.text = "Please begin speaking after the Beep"
             self.timerLabel.text = String("00:00")
             
             self.timerSlider.setProgress(0, animated: false)
