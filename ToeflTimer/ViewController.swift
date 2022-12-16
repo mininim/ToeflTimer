@@ -12,8 +12,6 @@ class ToeflTimerController: UIViewController {
 
     // MARK: - Properties
     
-    let db = Database.database().reference()
-    
     var timer: Timer?
     
     var currentTask : Int = 0
@@ -70,9 +68,22 @@ class ToeflTimerController: UIViewController {
         
         self.setPlayImage()
         
-        self.updateQuestion()
-                
+        self.setquestionLabel()
     }
+    
+    func setquestionLabel(){
+        
+        if self.taskSegmentControl.selectedSegmentIndex == 0{
+            
+            let todayQuestion = Questions.shared.getTodaysTask1Question()
+            self.questionLabel.text = todayQuestion
+            
+        }else{
+            self.questionLabel.text = ""
+            
+        }
+    }
+    
     
     func setSecondProperties(){
         
@@ -147,7 +158,6 @@ extension ToeflTimerController{
             self.currentTask = 0
             self.setInitialUi()
         case 1:self.currentTask = 0
-            self.setInitialUi()
             self.currentTask = 1
             self.setInitialUi()
         case 2:
@@ -164,7 +174,7 @@ extension ToeflTimerController{
     }
     
     @objc func timerControlButtonTapped() {
-
+        
         if timer == nil{//case1- reset
             
             //Timer Start!
@@ -243,20 +253,6 @@ extension ToeflTimerController{
         }
         
         
-    }
-    
-    func updateQuestion(){
-        
-        db.child("firstData").observeSingleEvent(of: .value) { snapshot in
-            print("-->\(snapshot)")
-            
-            let value = snapshot.value as? String ?? ""
-            
-            DispatchQueue.main.async {
-                self.questionLabel.text = value
-            }
-            
-        }
     }
     
 }

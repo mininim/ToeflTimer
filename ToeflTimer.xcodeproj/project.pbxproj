@@ -18,6 +18,7 @@
 		BE21DC522948B2E50081F029 /* FirebaseAnalyticsWithoutAdIdSupport in Frameworks */ = {isa = PBXBuildFile; productRef = BE21DC512948B2E50081F029 /* FirebaseAnalyticsWithoutAdIdSupport */; };
 		BE21DC542948B2E50081F029 /* FirebaseDatabase in Frameworks */ = {isa = PBXBuildFile; productRef = BE21DC532948B2E50081F029 /* FirebaseDatabase */; };
 		BE21DC562948B2EE0081F029 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = BE21DC552948B2EE0081F029 /* GoogleService-Info.plist */; };
+		BE21DC58294AFFE50081F029 /* Questions.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE21DC57294AFFE50081F029 /* Questions.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,6 +33,7 @@
 		BE0CD1BE2935E8AD00B88B99 /* UIView+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+.swift"; sourceTree = "<group>"; };
 		BE0CD1C229372C5100B88B99 /* Tasks.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tasks.swift; sourceTree = "<group>"; };
 		BE21DC552948B2EE0081F029 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../../../Downloads/GoogleService-Info.plist"; sourceTree = "<group>"; };
+		BE21DC57294AFFE50081F029 /* Questions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Questions.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -70,6 +72,7 @@
 				BE0CD1AA2935D88900B88B99 /* AppDelegate.swift */,
 				BE0CD1AC2935D88900B88B99 /* SceneDelegate.swift */,
 				BE0CD1AE2935D88900B88B99 /* ViewController.swift */,
+				BE21DC57294AFFE50081F029 /* Questions.swift */,
 				BE0CD1C229372C5100B88B99 /* Tasks.swift */,
 				BE0CD1B02935D88900B88B99 /* Main.storyboard */,
 				BE0CD1BE2935E8AD00B88B99 /* UIView+.swift */,
@@ -170,6 +173,7 @@
 				BE0CD1AF2935D88900B88B99 /* ViewController.swift in Sources */,
 				BE0CD1AB2935D88900B88B99 /* AppDelegate.swift in Sources */,
 				BE0CD1BF2935E8AD00B88B99 /* UIView+.swift in Sources */,
+				BE21DC58294AFFE50081F029 /* Questions.swift in Sources */,
 				BE0CD1C329372C5100B88B99 /* Tasks.swift in Sources */,
 				BE0CD1AD2935D88900B88B99 /* SceneDelegate.swift in Sources */,
 			);
