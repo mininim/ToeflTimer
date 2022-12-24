@@ -68,7 +68,7 @@ class ToeflTimerController: UIViewController {
         
         self.setPlayImage()
         
-        self.setquestionLabel()
+//        self.setquestionLabel()
     }
     
     func setquestionLabel(){

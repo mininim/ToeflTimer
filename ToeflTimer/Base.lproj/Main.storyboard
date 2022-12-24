@@ -88,7 +88,7 @@
                                 </userDefinedRuntimeAttributes>
                             </stackView>
                             <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="n4x-kJ-BIE">
-                                <rect key="frame" x="156.66666666666666" y="538" width="80" height="80"/>
+                                <rect key="frame" x="156.66666666666666" y="524" width="80" height="80"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="80" id="1lv-HQ-vMt"/>
                                     <constraint firstAttribute="width" constant="80" id="oG0-hs-gst"/>
@@ -117,11 +117,8 @@
                                     </label>
                                 </subviews>
                             </stackView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="justified" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8vb-KU-awc">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="justified" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8vb-KU-awc">
                                 <rect key="frame" x="19.666666666666657" y="135.33333333333331" width="353.66666666666674" height="128.33333333333331"/>
-                                <string key="text">Do you agree or disagree with the following statement? Boys and girls should attend separate schools.
-
-Give specific reasons to support your opinion.</string>
                                 <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -131,7 +128,7 @@ Give specific reasons to support your opinion.</string>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="n4x-kJ-BIE" firstAttribute="centerX" secondItem="SQw-bD-9Tt" secondAttribute="centerX" id="3dL-gx-UIQ"/>
-                            <constraint firstItem="HyO-Jk-KGK" firstAttribute="bottom" secondItem="n4x-kJ-BIE" secondAttribute="bottom" constant="200" id="6kR-7F-Z5w"/>
+                            <constraint firstItem="n4x-kJ-BIE" firstAttribute="top" secondItem="BD7-a8-gEP" secondAttribute="bottom" constant="70" id="8qd-rE-52K"/>
                             <constraint firstItem="BD7-a8-gEP" firstAttribute="centerX" secondItem="HyO-Jk-KGK" secondAttribute="centerX" id="CCN-eG-X21"/>
                             <constraint firstItem="8vb-KU-awc" firstAttribute="leading" secondItem="3a8-bT-p4Q" secondAttribute="leading" id="F7d-w2-DIN"/>
                             <constraint firstItem="n5n-6b-2aX" firstAttribute="top" secondItem="HyO-Jk-KGK" secondAttribute="top" constant="20" id="G3c-ZE-oKB"/>
@@ -164,7 +161,7 @@ Give specific reasons to support your opinion.</string>
     </scenes>
     <color key="tintColor" systemColor="labelColor"/>
     <resources>
-        <image name="play.circle.fill" catalog="system" width="32" height="32"/>
+        <image name="play.circle.fill" catalog="system" width="128" height="123"/>
         <systemColor name="labelColor">
             <color red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
