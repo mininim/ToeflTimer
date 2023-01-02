@@ -16,13 +16,13 @@ class Questions {
     
     let db = Database.database().reference()
     
-    var datekey : String = "2001-05-16"
+    var datekey : String = "05-16"
     
-    var task1Question : String = "Try today's Task1 Question"
+    var task1Question : String = "Click to try today's Task1 or Swipe to delete"
     
     var dateFormatter: DateFormatter = {
         let dateFormatter = DateFormatter()
-        dateFormatter.dateFormat = "YYYY-MM-dd"
+        dateFormatter.dateFormat = "MM-dd"
         
         return dateFormatter
     }()
@@ -34,9 +34,8 @@ class Questions {
         
         
         db.child(datekey).observeSingleEvent(of: .value) { snapshot in
-            print("-->\(snapshot)")
             
-            self.task1Question = snapshot.value as? String ?? ""
+            self.task1Question = snapshot.value as? String ?? "Check your network connection and try again"
              
         }
         

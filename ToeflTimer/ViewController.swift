@@ -51,6 +51,7 @@ class ToeflTimerController: UIViewController {
         
         timerControlButton.addTarget(self, action: #selector(timerControlButtonTapped), for: .touchUpInside)
         
+        self.setupQustionLabelGesture()
 
     }
     
@@ -69,18 +70,19 @@ class ToeflTimerController: UIViewController {
         self.setPlayImage()
         
         self.setquestionLabel()
+        
+
     }
     
     func setquestionLabel(){
-        
+
         if self.taskSegmentControl.selectedSegmentIndex == 0{
-            
             let todayQuestion = Questions.shared.getTodaysTask1Question()
             self.questionLabel.text = todayQuestion
-            
+
         }else{
-            self.questionLabel.text = ""
-            
+            self.questionLabel.text = "\n\n\n\n\n"
+
         }
     }
     
@@ -143,6 +145,22 @@ class ToeflTimerController: UIViewController {
         timerControlButton.setImage(image, for: .normal)
     }
     
+    func setupQustionLabelGesture(){
+        
+        //Click : Show Today's Task 1 Question
+        let questionLabelTap = UITapGestureRecognizer(target: self, action: #selector(self.questionLabelTapped(_:)))
+        self.questionLabel.isUserInteractionEnabled = true
+        self.questionLabel.addGestureRecognizer(questionLabelTap)
+        
+        
+        //Swip : Delete
+        let questionLabelSwipe = UISwipeGestureRecognizer(target: self, action: #selector(self.questionLabelSwiped(_:)))
+        self.questionLabel.isUserInteractionEnabled = true
+        self.questionLabel.addGestureRecognizer(questionLabelSwipe)
+        
+        
+        
+    }
     
 }
 
@@ -253,6 +271,21 @@ extension ToeflTimerController{
         }
         
         
+    }
+    
+    @objc func questionLabelSwiped(_ sender: UISwipeGestureRecognizer){
+        self.questionLabel.text = "\n\n\n\n\n"
+    }
+    
+    @objc func questionLabelTapped(_ sender: UITapGestureRecognizer){
+        if self.taskSegmentControl.selectedSegmentIndex == 0{
+            
+            let todayQuestion = Questions.shared.getTodaysTask1Question()
+            self.questionLabel.text = todayQuestion
+            
+        }else{
+            self.questionLabel.text = "\n\n\n\n\n"
+        }
     }
     
 }
