@@ -21,6 +21,18 @@ class ToeflTimerController: UIViewController {
     var speakingDelaySecondsLeft: Int = 0
     var speakingSecondsLeft: Int = 0
     
+    let db = Database.database().reference()
+    let INITIALQuestionLabelTEXT : String = "Swipe to delete or Tap to try today's Task1"
+    let NETWORKErrorTEXT : String = "Please check your network connection and try again"
+    let EMPTYQuestionLabelTEXT : String = "\n\n\n\n\n"
+    var currentTask1Text : String = "Swipe to delete or Tap to try today's Task1"
+    var dateFormatter: DateFormatter = {
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "MM-dd"
+        
+        return dateFormatter
+    }()
+    
     // MARK: - UI Components
     
     
@@ -77,11 +89,12 @@ class ToeflTimerController: UIViewController {
     func setquestionLabel(){
 
         if self.taskSegmentControl.selectedSegmentIndex == 0{
-            let todayQuestion = Questions.shared.getTodaysTask1Question()
-            self.questionLabel.text = todayQuestion
+
+            self.questionLabel.text = currentTask1Text
 
         }else{
-            self.questionLabel.text = "\n\n\n\n\n"
+            
+            self.questionLabel.text = EMPTYQuestionLabelTEXT
 
         }
     }
@@ -274,18 +287,31 @@ extension ToeflTimerController{
     }
     
     @objc func questionLabelSwiped(_ sender: UISwipeGestureRecognizer){
-        self.questionLabel.text = "\n\n\n\n\n"
+        currentTask1Text = EMPTYQuestionLabelTEXT
+        self.questionLabel.text = currentTask1Text
     }
     
     @objc func questionLabelTapped(_ sender: UITapGestureRecognizer){
-        if self.taskSegmentControl.selectedSegmentIndex == 0{
+                
+        if self.taskSegmentControl.selectedSegmentIndex == 0 &&
+            (currentTask1Text == INITIALQuestionLabelTEXT ||
+                currentTask1Text == EMPTYQuestionLabelTEXT){
+
             
-            let todayQuestion = Questions.shared.getTodaysTask1Question()
-            self.questionLabel.text = todayQuestion
-            
-        }else{
-            self.questionLabel.text = "\n\n\n\n\n"
+                let datekey = dateFormatter.string(from: Date())
+                    db.child(datekey).observeSingleEvent(of: .value) { snapshot in
+
+                        self.currentTask1Text = snapshot.value as? String ?? self.NETWORKErrorTEXT
+
+                        DispatchQueue.main.async {
+                            self.questionLabel.text = self.currentTask1Text
+                        }
+                    }
+
+
         }
+        
+        
     }
     
 }
