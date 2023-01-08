@@ -22,10 +22,10 @@ class ToeflTimerController: UIViewController {
     var speakingSecondsLeft: Int = 0
     
     let db = Database.database().reference()
-    let INITIALQuestionLabelTEXT : String = "Swipe to delete or Tap to try today's Task1"
+    let INITIALQuestionLabelTEXT : String = "Tap to try today's Task1 or Swipe to delete"
     let NETWORKErrorTEXT : String = "Please check your network connection and try again"
     let EMPTYQuestionLabelTEXT : String = "\n\n\n\n\n"
-    var currentTask1Text : String = "Swipe to delete or Tap to try today's Task1"
+    var currentTask1Text : String = "Tap to try today's Task1 or Swipe to delete"
     var dateFormatter: DateFormatter = {
         let dateFormatter = DateFormatter()
         dateFormatter.dateFormat = "MM-dd"
@@ -295,7 +295,9 @@ extension ToeflTimerController{
                 
         if self.taskSegmentControl.selectedSegmentIndex == 0 &&
             (currentTask1Text == INITIALQuestionLabelTEXT ||
-                currentTask1Text == EMPTYQuestionLabelTEXT){
+             currentTask1Text == EMPTYQuestionLabelTEXT   ||
+             currentTask1Text == NETWORKErrorTEXT)
+            {
 
             
                 let datekey = dateFormatter.string(from: Date())
