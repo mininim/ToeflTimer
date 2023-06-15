@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		071551E82A3AAAAE00BC62D4 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 071551E72A3AAAAD00BC62D4 /* GoogleService-Info.plist */; };
+		073F77792A3B1E66002E5078 /* FirebaseAnalytics in Frameworks */ = {isa = PBXBuildFile; productRef = 073F77782A3B1E66002E5078 /* FirebaseAnalytics */; };
 		BE0CD1AB2935D88900B88B99 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE0CD1AA2935D88900B88B99 /* AppDelegate.swift */; };
 		BE0CD1AD2935D88900B88B99 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE0CD1AC2935D88900B88B99 /* SceneDelegate.swift */; };
 		BE0CD1AF2935D88900B88B99 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE0CD1AE2935D88900B88B99 /* ViewController.swift */; };
@@ -16,7 +17,6 @@
 		BE0CD1B72935D88B00B88B99 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BE0CD1B52935D88B00B88B99 /* LaunchScreen.storyboard */; };
 		BE0CD1BF2935E8AD00B88B99 /* UIView+.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE0CD1BE2935E8AD00B88B99 /* UIView+.swift */; };
 		BE0CD1C329372C5100B88B99 /* Tasks.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE0CD1C229372C5100B88B99 /* Tasks.swift */; };
-		BE21DC522948B2E50081F029 /* FirebaseAnalyticsWithoutAdIdSupport in Frameworks */ = {isa = PBXBuildFile; productRef = BE21DC512948B2E50081F029 /* FirebaseAnalyticsWithoutAdIdSupport */; };
 		BE21DC542948B2E50081F029 /* FirebaseDatabase in Frameworks */ = {isa = PBXBuildFile; productRef = BE21DC532948B2E50081F029 /* FirebaseDatabase */; };
 /* End PBXBuildFile section */
 
@@ -40,18 +40,26 @@
 			buildActionMask = 2147483647;
 			files = (
 				BE21DC542948B2E50081F029 /* FirebaseDatabase in Frameworks */,
-				BE21DC522948B2E50081F029 /* FirebaseAnalyticsWithoutAdIdSupport in Frameworks */,
+				073F77792A3B1E66002E5078 /* FirebaseAnalytics in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		073F77772A3B1E66002E5078 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		BE0CD19E2935D88900B88B99 = {
 			isa = PBXGroup;
 			children = (
 				BE0CD1A92935D88900B88B99 /* ToeflTimer */,
 				BE0CD1A82935D88900B88B99 /* Products */,
+				073F77772A3B1E66002E5078 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -105,8 +113,8 @@
 			);
 			name = ToeflTimer;
 			packageProductDependencies = (
-				BE21DC512948B2E50081F029 /* FirebaseAnalyticsWithoutAdIdSupport */,
 				BE21DC532948B2E50081F029 /* FirebaseDatabase */,
+				073F77782A3B1E66002E5078 /* FirebaseAnalytics */,
 			);
 			productName = ToeflTimer;
 			productReference = BE0CD1A72935D88900B88B99 /* ToeflTimer.app */;
@@ -331,7 +339,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.1;
+				MARKETING_VERSION = 1.1.1;
 				PRODUCT_BUNDLE_IDENTIFIER = com.minsop.ToeflTimer;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
@@ -360,7 +368,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.1;
+				MARKETING_VERSION = 1.1.1;
 				PRODUCT_BUNDLE_IDENTIFIER = com.minsop.ToeflTimer;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
@@ -404,10 +412,10 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		BE21DC512948B2E50081F029 /* FirebaseAnalyticsWithoutAdIdSupport */ = {
+		073F77782A3B1E66002E5078 /* FirebaseAnalytics */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = BE21DC502948B2E50081F029 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
-			productName = FirebaseAnalyticsWithoutAdIdSupport;
+			productName = FirebaseAnalytics;
 		};
 		BE21DC532948B2E50081F029 /* FirebaseDatabase */ = {
 			isa = XCSwiftPackageProductDependency;

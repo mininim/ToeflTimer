@@ -6,7 +6,8 @@
 //
 
 import UIKit
-import Firebase
+import FirebaseDatabase
+import FirebaseAnalytics
 
 class ToeflTimerController: UIViewController {
 
@@ -208,6 +209,8 @@ extension ToeflTimerController{
         
         if timer == nil{//case1- reset
             
+            Analytics.logEvent("timer_started", parameters: ["Task":"Task\(currentTask)"])
+            
             //Timer Start!
             self.timer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(self.timerRun), userInfo: nil, repeats: true)
             
@@ -216,7 +219,6 @@ extension ToeflTimerController{
             self.setResetImage()
             
             self.freezeTaskSegment()
-            
             
         }else{//case2- play
             
