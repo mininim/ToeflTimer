@@ -291,29 +291,26 @@ extension ToeflTimerController{
         self.questionLabel.text = currentTask1Text
     }
     
-    @objc func questionLabelTapped(_ sender: UITapGestureRecognizer){
-                
-        if self.taskSegmentControl.selectedSegmentIndex == 0 &&
-            (currentTask1Text == INITIALQuestionLabelTEXT ||
-             currentTask1Text == EMPTYQuestionLabelTEXT   ||
-             currentTask1Text == NETWORKErrorTEXT)
-            {
-
-            
-                let datekey = dateFormatter.string(from: Date())
-                    db.child(datekey).observeSingleEvent(of: .value) { snapshot in
-
-                        self.currentTask1Text = snapshot.value as? String ?? self.NETWORKErrorTEXT
-
+    
+    @objc func questionLabelTapped(_ sender: UITapGestureRecognizer) {
+        if self.taskSegmentControl.selectedSegmentIndex == 0 {
+            if currentTask1Text == INITIALQuestionLabelTEXT || currentTask1Text == EMPTYQuestionLabelTEXT || currentTask1Text == NETWORKErrorTEXT {
+                let dateKey = dateFormatter.string(from: Date())
+                db.child(dateKey).observeSingleEvent(of: .value) { snapshot in
+                    if let task1Text = snapshot.value as? String {
                         DispatchQueue.main.async {
+                            self.currentTask1Text = task1Text
+                            self.questionLabel.text = self.currentTask1Text
+                        }
+                    } else {
+                        DispatchQueue.main.async {
+                            self.currentTask1Text = self.NETWORKErrorTEXT
                             self.questionLabel.text = self.currentTask1Text
                         }
                     }
-
-
+                }
+            }
         }
-        
-        
     }
     
 }
